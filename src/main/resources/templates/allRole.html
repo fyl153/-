@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>角色列表</title>
+</head>
+<body>
+角色列表信息：
+<table>
+    <tr>
+        <td>编号</td>
+        <td>名称</td>
+        <td>操作</td>
+    </tr>
+    <tr th:each="r:${roleList}">
+        <td th:text="${r.roleCode}">编号</td>
+        <td th:text="${r.roleName}">名称</td>
+        <td>
+            <a th:href="@{/showRole(id=${r.id})}">编辑</a>&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/delRole(id=${r.id})}">删除</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
