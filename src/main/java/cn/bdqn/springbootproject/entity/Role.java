@@ -1,20 +1,33 @@
 package cn.bdqn.springbootproject.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
+
 
 public class Role {
     private Integer id;
     private String roleName;
     private  String roleCode;
-    private Integer createBy;
+    private Integer createdBy;
     private Date creationDate;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private Date modifyDate;
+
+    public Date getModifyDate() {
+        return modifyDate;
+    }
+
+    public void setModifyDate(Date modifyDate) {
+        this.modifyDate = modifyDate;
+    }
 
     public Role(){}
-    public Role(Integer id, String roleName, String roleCode, Integer createBy, Date creationDate) {
+    public Role(Integer id, String roleName, String roleCode, Integer createdBy, Date creationDate) {
         this.id = id;
         this.roleName = roleName;
         this.roleCode = roleCode;
-        this.createBy = createBy;
+        this.createdBy = createdBy;
         this.creationDate = creationDate;
     }
 
@@ -43,11 +56,11 @@ public class Role {
     }
 
     public Integer getCreateBy() {
-        return createBy;
+        return createdBy;
     }
 
     public void setCreateBy(Integer createBy) {
-        this.createBy = createBy;
+        this.createdBy = createBy;
     }
 
     public Date getCreationDate() {

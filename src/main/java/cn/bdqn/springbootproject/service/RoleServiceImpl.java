@@ -5,6 +5,7 @@ import cn.bdqn.springbootproject.entity.Role;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -12,12 +13,22 @@ public class RoleServiceImpl implements RoleService{
     @Resource
     private RoleDao rdao;
     @Override
-    public int updateRole(Integer id, String roleName) {
-        return rdao.updateRole(id, roleName);
+    public int updateRole(Integer id, String roleName, Date modifyDate) {
+        return rdao.updateRole(id, roleName,modifyDate);
     }
 
     @Override
     public List<Role> findAllRole() {
         return rdao.findAllRole();
+    }
+
+    @Override
+    public int updateRole1(Role role) {
+        return rdao.updateRole1(role);
+    }
+
+    @Override
+    public Role findRole(Integer id) {
+        return rdao.findRole(id);
     }
 }

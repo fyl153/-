@@ -9,10 +9,27 @@
     <update id="updateRole">
         update smbms_role
         <set>
-            roleName=#{roleName}
+            roleName=#{roleName},
+            modifyDate=#{modifyDate}
             <where>
                 id=#{id}
             </where>
         </set>
     </update>
+    <update id="updateRole1" parameterType="Role">
+        update smbms_role
+        <set>
+            roleName=#{roleName},
+            modifyDate=#{modifyDate}
+            <where>
+                id=#{id}
+            </where>
+        </set>
+    </update>
+    <select id="findRole" parameterType="int" resultType="Role">
+        select * from smbms_role
+        <where>
+            id=#{id}
+        </where>
+    </select>
 </mapper>
