@@ -20,9 +20,9 @@
 
 # ----------------------------------------------------------------------------
 # Maven Start Up Batch script
-#
-# Required ENV vars:
-# ------------------
+＃今天
+＃必需的ENV变量：
+＃------------------
 #   JAVA_HOME - location of a JDK home dir
 #
 # Optional ENV vars
